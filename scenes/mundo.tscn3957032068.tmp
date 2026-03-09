@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://vrkq8jja8rek"]
+
+[ext_resource type="Script" uid="uid://bqhuap3ssclvv" path="res://scripts/mundo.gd" id="1_0vka0"]
+[ext_resource type="PackedScene" uid="uid://dywh8lnn8fo5o" path="res://scenes/player.tscn" id="2_0vka0"]
+[ext_resource type="Texture2D" uid="uid://kijq00gr5eq5" path="res://icon.svg" id="3_vwj67"]
+[ext_resource type="Script" uid="uid://kklyi5mgcrbl" path="res://scenes/static_body_2d.gd" id="3_yi5ae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otwa2"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D" unique_id=91645049 node_paths=PackedStringArray("player")]
+script = ExtResource("1_0vka0")
+player = NodePath("CharacterBody2D")
+
+[node name="CharacterBody2D" parent="." unique_id=657212232 instance=ExtResource("2_0vka0")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1991786765]
+position = Vector2(-64, 580)
+script = ExtResource("3_yi5ae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1478831603]
+shape = SubResource("RectangleShape2D_otwa2")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=317828791]
+texture = ExtResource("3_vwj67")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1928684931 groups=["Piso"]]
+position = Vector2(65, 580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1790272278]
+shape = SubResource("RectangleShape2D_otwa2")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=632043179]
+texture = ExtResource("3_vwj67")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=781385373 groups=["Pinchos"]]
+modulate = Color(0.6784664, 1.7808378e-06, 0.40132204, 1)
+position = Vector2(193, 580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=578485769]
+shape = SubResource("RectangleShape2D_otwa2")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=178785703]
+texture = ExtResource("3_vwj67")
